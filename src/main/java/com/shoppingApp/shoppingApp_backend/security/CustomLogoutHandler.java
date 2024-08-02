@@ -1,4 +1,4 @@
-package com.shoppingApp.shoppingApp_backend.security.config;
+package com.shoppingApp.shoppingApp_backend.security;
 
 import com.shoppingApp.shoppingApp_backend.dao.TokenRepository;
 import com.shoppingApp.shoppingApp_backend.model.Token;

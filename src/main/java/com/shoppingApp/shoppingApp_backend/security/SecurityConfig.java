@@ -1,6 +1,5 @@
-package com.shoppingApp.shoppingApp_backend.security.config;
+package com.shoppingApp.shoppingApp_backend.security;
 
-import com.shoppingApp.shoppingApp_backend.security.JWTAuthenticationFilter;
 import com.shoppingApp.shoppingApp_backend.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
