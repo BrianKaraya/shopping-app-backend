@@ -1,5 +1,6 @@
 package com.shoppingApp.shoppingApp_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,6 +22,7 @@ public class WebOrders {
     @JoinColumn(name = "user_id", nullable = false)
     private LocalUser user;
 
+    @JsonIgnore
     @ManyToOne(optional = false)
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
