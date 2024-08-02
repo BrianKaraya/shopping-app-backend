@@ -7,5 +7,5 @@ import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductDAO extends JpaRepository<Product,Long> {
+public interface ProductDAO extends ListCrudRepository<Product,Long> {
 }

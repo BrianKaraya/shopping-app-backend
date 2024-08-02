@@ -3,6 +3,7 @@ package com.shoppingApp.shoppingApp_backend.api.order;
 import com.shoppingApp.shoppingApp_backend.model.LocalUser;
 import com.shoppingApp.shoppingApp_backend.model.WebOrders;
 import com.shoppingApp.shoppingApp_backend.service.WebOrderService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;

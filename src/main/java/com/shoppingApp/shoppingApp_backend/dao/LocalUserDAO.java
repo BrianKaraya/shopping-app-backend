@@ -11,10 +11,14 @@ public interface LocalUserDAO extends ListCrudRepository<LocalUser,Long> {
 
 
 
+
     Optional<LocalUser> findByUsername(String username);
 
     Optional<LocalUser> findByEmail(String email);
 
-   // Optional<LocalUser> findByRoleIgnoreCase(Role role);
+    @Override
+    Optional<LocalUser> findById(Long aLong);
+
+    // Optional<LocalUser> findByRoleIgnoreCase(Role role);
 
 }

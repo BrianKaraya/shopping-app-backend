@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping
+@RequestMapping("/auth")
 public class UserController {
     private LocalUserService localUserService;
 

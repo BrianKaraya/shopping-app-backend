@@ -11,7 +11,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-//@RequestMapping("/auth")
+@RequestMapping("/auth")
 
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
@@ -22,14 +22,14 @@ public class AuthenticationController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@Valid @RequestBody LocalUser request){
+    public ResponseEntity<AuthenticationResponse> register(@RequestBody LocalUser request){
         return ResponseEntity.ok(authenticationService.register(request));
 
 
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthenticationResponse> login(@RequestBody LocalUser request)  {
+    public ResponseEntity<AuthenticationResponse> login(@Valid @RequestBody LocalUser request)  {
         return ResponseEntity.ok(authenticationService.authenticate(request));
 
 
@@ -42,7 +42,7 @@ public class AuthenticationController {
     }
 
     @GetMapping("/me")
-    public LocalUser getLoggedInUserProfile(@AuthenticationPrincipal LocalUser user) {
+    public LocalUser getLoggedInUserProfile(@Valid @AuthenticationPrincipal LocalUser user) {
         return user;
 
 

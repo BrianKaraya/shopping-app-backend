@@ -20,8 +20,7 @@ public class OrderControllerTest {
 
 
 
-//    Tests the unauthenticated users do not receive data.
-//     @throws Exception
+
 
     @Test
     public void testUnauthenticatedOrderList() throws Exception {

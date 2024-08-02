@@ -40,8 +40,8 @@ public class LocalUser implements UserDetails{
     @Column(name = "email", nullable = false, unique = true, length = 320)
     private String email;
 
-    @JsonIgnore
-    @Column(name = "password", nullable = false, length = 1000)
+    //@JsonIgnore
+    @Column(name = "password", nullable = false,length = 1000)
     private String password;
     @Enumerated(value = EnumType.STRING)
     private Role role;
@@ -53,7 +53,7 @@ public class LocalUser implements UserDetails{
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Address> addresses = new ArrayList<>();
 
-@JsonIgnore
+    @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));

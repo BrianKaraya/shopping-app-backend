@@ -77,6 +77,7 @@ public class JWTService {
 
     private SecretKey getSignInKey() {
         String SECRET_KEY = "0cd0b37d0bd8bcca6363de949846d3f934cd54ee5251f35908895adaadc81cf3";
+        //String SECRET_KEY = "$2a$12$YDi7g/NluEkfTVWJM.RD.u86habgZVwf1gm5jAjHpKnOBnIGaQ/2C";
         byte[] keyBytes = Decoders.BASE64URL.decode(SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
