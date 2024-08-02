@@ -1,5 +1,6 @@
 package com.shoppingApp.shoppingApp_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +26,7 @@ public class Product {
     @Column(name = "price", nullable = false)
     private Double price;
 
-
+@JsonIgnore
     @OneToOne(mappedBy = "product", cascade = CascadeType.REMOVE, optional = false, orphanRemoval = true)
     private Inventory inventory;
 

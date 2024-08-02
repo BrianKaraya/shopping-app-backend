@@ -3,10 +3,11 @@ package com.shoppingApp.shoppingApp_backend.dao;
 import com.shoppingApp.shoppingApp_backend.model.LocalUser;
 import com.shoppingApp.shoppingApp_backend.model.Role;
 import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-//Repository
+@Repository
 public interface LocalUserDAO extends ListCrudRepository<LocalUser,Long> {
 
 

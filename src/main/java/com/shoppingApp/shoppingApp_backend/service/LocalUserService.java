@@ -20,12 +20,17 @@ public class LocalUserService {
         this.jwtService = jwtService;
     }
 
+
+
     public List<LocalUser> getAllUsers(){
         return localUserDAO.findAll();
     }
     public Optional<LocalUser> getUserById(Long id){
         return localUserDAO.findById(id);
 
+    }
+    public Optional<LocalUser> getUserByUsername(String username){
+        return localUserDAO.findByUsername(username);
     }
 
 

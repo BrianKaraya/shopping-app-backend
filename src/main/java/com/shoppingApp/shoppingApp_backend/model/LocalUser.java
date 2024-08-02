@@ -46,6 +46,10 @@ public class LocalUser implements UserDetails{
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
+
+
+
+@JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Token>tokens;
 
@@ -53,31 +57,34 @@ public class LocalUser implements UserDetails{
     @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<Address> addresses = new ArrayList<>();
 
+
+
+
     @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
-   // @JsonIgnore
+   @JsonIgnore
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
 
-    //@JsonIgnore
+    @JsonIgnore
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
 
-   // @JsonIgnore
+   @JsonIgnore
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
 
-    //@JsonIgnore
+    @JsonIgnore
     @Override
     public boolean isEnabled() {
         return true;

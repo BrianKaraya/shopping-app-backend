@@ -36,10 +36,10 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
-                        req -> req.requestMatchers("auth/login","auth/register","/products/add","auth/me")
+                        req -> req.requestMatchers("auth/login","auth/register","/products","auth/me")
                                 .permitAll()
                                 .requestMatchers("/auth/users/**").hasAuthority("ADMIN")
-                                .requestMatchers("/auth/admin_only/**","/products/**").hasAnyAuthority("ADMIN","MODERATOR")
+                                .requestMatchers("/auth/admin_only/**","/products/add","/inventory").hasAnyAuthority("ADMIN","MODERATOR")
                                 .anyRequest()
                                 .authenticated()
                 )

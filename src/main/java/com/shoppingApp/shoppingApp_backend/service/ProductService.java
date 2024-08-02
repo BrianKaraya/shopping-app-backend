@@ -31,11 +31,15 @@ public class ProductService {
         //return null;
         return List.of();
     }
+    public void deleteProductById(Long id){
+
+
+    }
 //    public void updateProduct(Product product){
 //        Optional<Product> oldProdData = productDAO.findById(product.getId());
 //        if (oldProdData.isPresent()){
 //            Product updatedProd = oldProdData.get();
-//            updatedProd.setCategory();
+//            updatedProd.setCategory
 //
 //        }
 //
