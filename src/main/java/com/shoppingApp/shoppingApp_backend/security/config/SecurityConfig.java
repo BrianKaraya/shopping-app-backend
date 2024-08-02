@@ -38,8 +38,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         req -> req.requestMatchers("auth/login","auth/register","/products","auth/me")
                                 .permitAll()
-                                .requestMatchers("/auth/users/**").hasAuthority("ADMIN")
-                                .requestMatchers("/auth/admin_only/**","/products/add","/inventory").hasAnyAuthority("ADMIN","MODERATOR")
+                                .requestMatchers("/auth/users/**","/auth/admin_only/**").hasAuthority("ADMIN")
+                                .requestMatchers("/products/add","/inventory/**").hasAnyAuthority("ADMIN","MODERATOR")
                                 .anyRequest()
                                 .authenticated()
                 )
