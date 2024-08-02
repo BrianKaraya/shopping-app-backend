@@ -1,9 +1,13 @@
 -- Script to insert dummy dev data into the database.
+-- https://bcrypt.online/
 
 -- NOTE: You first need to register two users(ROLE:USER) into the system before running this scirpt.
 -- Replace the id here(IF NOT 1 AND 2) with the first user id you want to have ownership of the orders.
+-- Password @Tester1,@Tester2,@Tester3 --Base64
 
-
+INSERT INTO local_user (email, password, firstname, lastname,username,role) VALUES ('a@f.nl', '$2y$10$yCh6UQLdhLs8ij4pV4JUOOdeYDvj0xMtcMizXAlGDGzXsV6vd9eni', 'Petr', 'Bnnn','User1','USER');
+INSERT INTO local_user (email, password, firstname, lastname,username,role) VALUES ('b@f.nl', '$2y$10$Gv4vPGpLqkU9lAv5hKvPZOXD3gjKbsf.UMO447D.EwFxdQuPaLpMK', 'John', 'Bnnn','User2','USER');
+INSERT INTO local_user (email, password, firstname, lastname,username,role) VALUES ('c@f.nl', '$2y$10$88cI0hGZaniemm9mvFGtuOYOC64kgy7DI9AW6I6/zYvmVStzy57Eu', 'Mary', 'Bnnn','User3','USER');
 
 SET @userId1 = 1;
 -- Replace the id here with the second user id you want to have ownership of the orders.
