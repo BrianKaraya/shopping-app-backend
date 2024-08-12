@@ -1,6 +1,7 @@
 package com.shoppingApp.shoppingApp_backend.service;
 
 import com.shoppingApp.shoppingApp_backend.dao.ProductDAO;
+import com.shoppingApp.shoppingApp_backend.model.Category;
 import com.shoppingApp.shoppingApp_backend.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,15 +32,19 @@ public class ProductService {
         //return null;
         return List.of();
     }
-    public void deleteProductById(Long id){
+//    public void deleteProductById(Long id){
+//
+//    }
 
 
-    }
 //    public void updateProduct(Product product){
 //        Optional<Product> oldProdData = productDAO.findById(product.getId());
 //        if (oldProdData.isPresent()){
 //            Product updatedProd = oldProdData.get();
-//            updatedProd.setCategory
+//            updatedProd.setName();
+//            updatedProd.setPrice();
+//            updatedProd.setDescription();
+//            updatedProd.setCategory(Category.valueOf("SPORT"));
 //
 //        }
 //
