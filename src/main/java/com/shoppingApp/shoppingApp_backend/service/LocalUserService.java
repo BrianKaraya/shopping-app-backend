@@ -4,6 +4,7 @@ import com.shoppingApp.shoppingApp_backend.dao.LocalUserDAO;
 import com.shoppingApp.shoppingApp_backend.model.LocalUser;
 import com.shoppingApp.shoppingApp_backend.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +31,8 @@ public class LocalUserService {
 
     }
     public Optional<LocalUser> getUserByUsername(String username){
-        return localUserDAO.findByUsername(username);
+        return Optional.ofNullable(localUserDAO.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found")));
     }
 
 
